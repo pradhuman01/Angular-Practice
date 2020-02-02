@@ -15,10 +15,11 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from '../app/shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { TestDirective } from './test.directive';
-import { RouterModule } from '@angular/router';
 import { Routing } from './routing.module';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DataStorageService } from './shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -40,9 +41,10 @@ import { RecipeService } from './recipes/recipe.service';
     AppRoutingModule,
     Routing,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ShoppingListService,  RecipeService],
+  providers: [ShoppingListService,  RecipeService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
